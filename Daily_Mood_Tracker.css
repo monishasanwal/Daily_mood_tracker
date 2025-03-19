@@ -1,0 +1,222 @@
+:root {
+/* background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%); */
+background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    --text-color: black;
+  }
+  
+.dark-mode {
+    background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    --text-color: white;
+  }
+  
+  body {
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+    text-align: center;
+  }
+
+h1 {
+    color: rgb(101, 26, 101);
+    font-size: 50px;
+    margin-top: 8px;
+}
+
+h3{
+    font-size: 30px;
+    margin-bottom: 1px;
+}
+
+#date{
+    margin-top: 0px;
+}
+
+#mood-container {
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
+    gap: 10%;
+    max-width: 90%;
+    background-color: #94bce954;
+    padding-top: 20px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+     rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+      rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, 
+      rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+       rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.mood-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mood-button {
+    font-size: 80px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.mood-button:hover {
+    transform: scale(1.5);
+}
+
+
+#filters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    font-size: 1.5em;
+    gap: 10px;
+}
+
+#filters select {
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid gray;
+}
+
+#filters select:hover {
+    background-color: #f0f0f0;
+}
+
+#moodChart{
+    max-width: 600px;
+    max-height: 400px;
+    margin: 3rem auto;
+}
+
+.mood-happy {
+    background-color: #ffd700;
+}
+
+.mood-sad {
+    background-color: #ff4500;
+}
+
+.mood-excited {
+    background-color: #1e90ff;
+}
+
+.mood-neutral {
+    background-color: #32cd32;
+}
+
+#viewContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: auto;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 90%;
+    align-items: center;
+    background-color: #94bce954;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+     rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+      rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, 
+      rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+       rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  }
+  
+  #chart-container {
+    flex: 1;
+    max-width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+  }
+  
+  #calendar-container {
+    flex: 1;
+    max-width: 30%; 
+    flex-direction: column;
+    align-items: center;
+    margin-right: 10%;
+    border-radius: 10px;
+  }
+  
+  #calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 5px;
+  }
+  
+  .calendar-day {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #b6b5b5;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .calendar-day.highlight {
+    background-color: #5bec5b; /* Green for Neutral */
+    color: white;
+  }
+  
+  .calendar-day.happy {
+    background-color: #f7dc40; /* Yellow for Happy */
+    color: white;
+  }
+  
+  .calendar-day.sad {
+    background-color: #ed7143; /* Red for Sad */
+    color: white;
+  }
+  
+  .calendar-day.excited {
+    background-color: #5aa5ef; /* Blue for Excited */
+    color: white;
+  }
+  
+  @media (max-width: 768px) {
+    #mood-container,
+    #filters,
+    #viewContainer {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    #chart-container,
+    #calendar-container {
+      max-width: 100%;
+      margin: 10px 0;
+    }
+  
+    #calendar {
+      grid-template-columns: repeat(7, 1fr);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .mood-button {
+      font-size: 60px;
+    }
+  
+    .calendar-day {
+      width: 30px;
+      height: 30px;
+      font-size: 0.8em;
+    }
+  
+    #moodChart {
+      max-height: 300px;
+    }
+  }

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily Mood Tracker</title>
+    <link rel="stylesheet" href="Daily_Mood_Tracker.css" />
+  </head>
+  <body>
+
+      <h1 id="mainHeading">| Daily Mood Tracker |</h1>
+      <h3>How do you feel today ?</h3>
+      <p id="date"></p>
+
+    <div id="mood-container">
+      <div class="mood-option">
+        <button id="happy-button" class="mood-button">&#128522;</button>
+        <p>Happy</p>
+      </div>
+      <div class="mood-option">
+        <button id="sad-button" class="mood-button">&#128542;</button>
+        <p>Sad</p>
+      </div>
+      <div class="mood-option">
+        <button id="excited-button" class="mood-button">&#128512;</button>
+        <p>Excited</p>
+      </div>
+      <div class="mood-option">
+        <button id="neutral-button" class="mood-button">&#128528;</button>
+        <p>Neutral</p>
+      </div>
+    </div>
+
+    <div id="viewContainer">
+
+      <div id="chart-container">
+        <div id="filters">
+
+          <label for="moodFilter">View your Mood Trend</label>
+
+          <select id="moodFilter">
+            <option value="day">Day</option>
+            <option value="week">Week</option>
+            <option value="month">Month</option>
+          </select>
+        </div>
+
+        <canvas id="moodChart"></canvas>
+      </div> 
+    
+      <div id="calendar-container">
+        <h2>Calendar View</h2>
+        <div id="calendar"></div>
+      </div>
+    </div>
+    
+
+
+</div>
+
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="Daily_Mood_Tracker.js"></script>
+</html>
