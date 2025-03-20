@@ -25,7 +25,9 @@ Daily_Mood_Tracker\Scrrenshots\Calendar_view.png
 
 ## Deployment
 
-You can access the application here:
+You can access the application here on Netlify:
+
+https://track-your-mood.netlify.app/
 
 
 ## How to Use
